@@ -17,6 +17,12 @@ Customizable Output: Option to specify the output file name, making it flexible 
 
 # Installation 
 
+### One Line Install for Linux 
+> wget https://raw.githubusercontent.com/D3fu1t/Subcon/refs/heads/main/subcon;chmod +x subcon;mv subcon /usr/bin
+
+## Others :
+
+
 
 # Usage
 To use Subcon Tool, run the following command in your terminal:
