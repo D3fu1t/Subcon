@@ -15,10 +15,13 @@ User-Friendly Interface: Simple command-line interface with clear usage instruct
 
 Customizable Output: Option to specify the output file name, making it flexible for different workflows.
 
+# Installation 
+
+
 # Usage
 To use Subcon Tool, run the following command in your terminal:
 
-subcon example.com [-o output_file]
+> subcon example.com [-o output_file]
 
 # Parameters
 
