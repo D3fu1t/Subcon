@@ -43,8 +43,13 @@ subfinder installed on your system
 curl for fetching data from the web
 jq for processing JSON output
 
-#installation 
 Ensure you have the required tools installed (subfinder, curl, jq).
+
+> sudo apt install subfinder
+> 
+> sudo apt install curl
+> 
+> sudo apt install jq
 
 # License
 This project is licensed under the MIT License. See the LICENSE file for details.
