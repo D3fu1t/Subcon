@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Function to center text
+center_text() {
+    local text="$1"
+    local width=$(tput cols)  # Get the terminal width
+    local padding=$(( (width - ${#text}) / 2 ))
+    printf "%${padding}s%s\n" "" "$text"  # Print with padding
+}
+
+# Check if an argument is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <domain> [-o output_file]"
+    exit 1
+fi
+
+domain="$1"
+output_file="subdomains.txt"
+
+# Parse optional output file argument
+if [ "$2" == "-o" ] && [ ! -z "$3" ]; then
+    output_file="$3"
+fi
+
+# Add the banner
+center_text "      _          _                      "
+center_text "     | |        | |                     "
+center_text "      \\ \\  _   _| | _   ____ ___  ____  "
+center_text "       \\ \\| | | | || \\ / ___) _ \\|  _ \\ "
+center_text "  _____) ) |_| | |_) | (__| |_| | | | | "
+center_text " (______/ \\____|____/ \\____)___/|_| |_| "
+center_text "                                       "
+echo ""
+
+# Add the tool description
+center_text "A Fast and Effective Subdomain Enumeration Tool"
+
+echo ""
+# Add the author information
+center_text "Author  : D3fu1t"
+center_text "Github  : github.com/D3fu1t"
+center_text "Twitter : x.com/MrD3fu1t"
+echo ""
+
+# Perform subdomain enumeration using subfinder
+subfinder -d "$domain" -o subfinder_output.txt 2>/dev/null
+
+# Perform subdomain enumeration using crt.sh with the silent flag
+curl -s "https://crt.sh/?q=$domain&output=json" | jq -r '.[] | .name_value' | sed 's/\*\.//g' >> crt_output.txt
+
+# Combine the results from subfinder and crt.sh
+cat subfinder_output.txt crt_output.txt > combined_output.txt
+
+# Remove duplicated subdomains as the results are processed
+sort -u combined_output.txt | while read subdomain; do
+    echo "$subdomain"
+done > "$output_file"
+
+# Display the final list of subdomains
+cat "$output_file"
+
+# Clean up temporary files
+rm subfinder_output.txt crt_output.txt combined_output.txt
