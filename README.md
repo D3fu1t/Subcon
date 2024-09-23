@@ -23,10 +23,10 @@ Customizable Output: Option to specify the output file name, making it flexible 
 ## Others :
 
 > git clone https://github.com/D3fu1t/Subcon.git
-> cd Subcon
-> bash subcon example.com
-> or
-> copy/move subcon to your bin Directory
+### cd Subcon
+### bash subcon example.com
+# or
+> Copy/Move subcon to your bin Directory
 
 # Usage
 To use Subcon Tool, run the following command in your terminal:
