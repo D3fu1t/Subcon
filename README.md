@@ -17,7 +17,7 @@ Customizable Output: Option to specify the output file name, making it flexible 
 
 # Installation 
 
-### One Line Install for Linux 
+### Oneliner Install for Linux 
 > wget https://raw.githubusercontent.com/D3fu1t/Subcon/refs/heads/main/subcon;chmod +x subcon;mv subcon /usr/bin
 
 ## Others :
@@ -27,7 +27,7 @@ Customizable Output: Option to specify the output file name, making it flexible 
 >  cd Subcon
 >
 > bash subcon example.com
-# Next
+# OR
 > Copy/Move subcon to your Bin Directory.Then Use it like that :
 >
 > subcon example.com 
